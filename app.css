@@ -1,0 +1,538 @@
+/* Samadhan Setu - Design System & Styling */
+:root {
+  --primary-navy: #0f2b5c;
+  --primary-blue: #1d4ed8;
+  --accent-saffron: #ea580c;
+  --accent-emerald: #059669;
+  --bg-slate: #f8fafc;
+  --border-slate: #e2e8f0;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-slate);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilities */
+.container-max {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tiranga-top {
+  height: 4px;
+  background: linear-gradient(90deg, #f97316 0%, #ffffff 50%, #10b981 100%);
+}
+
+.govt-header {
+  background: linear-gradient(135deg, #0a192f 0%, #0f2b5c 70%, #1e40af 100%);
+  color: white;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.badge-saffron { background-color: #fff7ed; color: #c2410c; border-color: #ffedd5; }
+.badge-blue { background-color: #eff6ff; color: #1d4ed8; border-color: #dbeafe; }
+.badge-emerald { background-color: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+.badge-amber { background-color: #fffbeb; color: #b45309; border-color: #fef3c7; }
+.badge-red { background-color: #fef2f2; color: #b91c1c; border-color: #fecaca; }
+.badge-purple { background-color: #faf5ff; color: #7e22ce; border-color: #f3e8ff; }
+.badge-slate { background-color: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.btn-primary { background-color: #1d4ed8; color: white; }
+.btn-primary:hover { background-color: #1e40af; }
+.btn-saffron { background-color: #ea580c; color: white; }
+.btn-saffron:hover { background-color: #c2410c; }
+.btn-emerald { background-color: #059669; color: white; }
+.btn-emerald:hover { background-color: #047857; }
+.btn-outline { background-color: white; color: #334155; border-color: #cbd5e1; }
+.btn-outline:hover { background-color: #f8fafc; border-color: #94a3b8; }
+.btn-ghost { background-color: transparent; color: #475569; }
+.btn-ghost:hover { background-color: #f1f5f9; }
+.btn-sm { padding: 0.35rem 0.65rem; font-size: 0.75rem; }
+
+/* Cards */
+.card {
+  background-color: white;
+  border: 1px solid var(--border-slate);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+.modal-content {
+  background-color: white;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 650px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
+}
+.modal-content.modal-large {
+  max-width: 860px;
+}
+
+/* Kanban Board */
+.kanban-col {
+  background-color: #f1f5f9;
+  border-radius: 0.5rem;
+  padding: 0.85rem;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.kanban-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.1s;
+}
+.kanban-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+/* Form inputs */
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #0f172a;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Real Interactive Leaflet Geographic Map Container (Google Maps Experience) */
+.real-map-container {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  background: #e5e3df; /* Google Maps default terrain canvas color */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+
+@media (min-width: 640px) {
+  .real-map-container {
+    height: 420px;
+  }
+}
+
+.real-map-detail-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #e5e3df;
+  border-radius: 0.75rem;
+  border: 1.5px solid #cbd5e1;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Leaflet UI & Google Maps Visual Styling */
+.leaflet-container {
+  font-family: inherit;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.leaflet-tile {
+  filter: contrast(1.03) saturate(1.08);
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  margin-top: 12px !important;
+  margin-left: 12px !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #ffffff !important;
+  color: #3c4043 !important;
+  font-size: 16px !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  border-bottom: 1px solid #e8eaed !important;
+  transition: background 0.15s ease;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f1f3f4 !important;
+  color: #1a73e8 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  padding: 6px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Google Maps Red Teardrop Marker Pin */
+.google-maps-pin-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transform-origin: bottom center;
+  animation: pinDrop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.google-maps-pin-wrapper:active {
+  cursor: grabbing;
+}
+
+@keyframes pinDrop {
+  0% {
+    transform: translateY(-24px) scale(1.15);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.custom-map-pin, .custom-map-pin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.custom-map-pin:active, .custom-map-pin-container:active {
+  cursor: grabbing;
+}
+
+/* Evidence Upload Dropzone */
+.evidence-dropzone {
+  border: 2px dashed #93c5fd;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.evidence-dropzone:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+/* Evidence Preview Cards */
+.evidence-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+.evidence-card {
+  position: relative;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.evidence-card img, .evidence-card video {
+  width: 100%;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  background: #0f172a;
+}
+.evidence-remove-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.1s, background 0.1s;
+}
+.evidence-remove-btn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Loading animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom chart bar */
+.bar-fill {
+  transition: width 0.8s ease-out;
+}
+
+/* =================================================== */
+/* SAMADHAN AI VOICE ASSISTANT & TTS STYLING          */
+/* =================================================== */
+
+/* Floating AI Assistant Trigger Button */
+.samadhan-ai-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0f2b5c 0%, #1d4ed8 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.4), 0 8px 10px -6px rgba(29, 78, 216, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.samadhan-ai-fab:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 28px -5px rgba(29, 78, 216, 0.5);
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+}
+
+.samadhan-ai-pulse {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid white;
+}
+.samadhan-ai-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.4);
+  animation: mapPulse 1.8s infinite;
+}
+
+/* Floating AI Assistant Chat Drawer / Popup */
+.samadhan-ai-drawer {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  width: 400px;
+  max-width: calc(100vw - 2rem);
+  max-height: 580px;
+  height: 80vh;
+  z-index: 50;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 35px -10px rgba(15, 43, 92, 0.25), 0 1px 3px rgba(0,0,0,0.1);
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUpFade 0.25s ease-out;
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Voice Input Inline Button */
+.btn-voice-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-voice-input:hover {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+.btn-voice-input.recording {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  animation: micPulse 1.2s infinite;
+}
+
+@keyframes micPulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* TTS Speaker Button & Controls */
+.btn-tts-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-tts-listen:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #93c5fd;
+}
+.btn-tts-listen.playing {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+/* Animated Audio Wave for Text-to-Speech */
+.audio-wave-bars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+.audio-wave-bar {
+  width: 2.5px;
+  height: 100%;
+  background: currentColor;
+  border-radius: 9999px;
+  animation: audioWave 0.8s ease-in-out infinite alternate;
+}
+.audio-wave-bar:nth-child(2) { animation-delay: 0.2s; }
+.audio-wave-bar:nth-child(3) { animation-delay: 0.4s; }
+.audio-wave-bar:nth-child(4) { animation-delay: 0.1s; }
+
+@keyframes audioWave {
+  0% { height: 4px; }
+  100% { height: 14px; }
+}
+
+/* Multilingual Toggle Card */
+.translation-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  margin-top: 0.4rem;
+}
+
